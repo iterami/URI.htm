@@ -20,7 +20,7 @@ function repo_init(){
       'info-events': {
         'view': {
           'todo': function(){
-              core_storage_save();
+              canvas_setmode();
 
               image.src = core_storage_data['uri'];
 
@@ -28,6 +28,7 @@ function repo_init(){
           },
         },
       },
+      'menu': true,
       'storage': {
         'uri': 'data:,',
       },
