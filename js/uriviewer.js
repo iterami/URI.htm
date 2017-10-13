@@ -1,0 +1,40 @@
+'use strict';
+
+function draw_logic(){
+    try{
+        canvas_buffer.drawImage(
+          image,
+          canvas_x,
+          canvas_y
+        );
+    }catch(error){
+    }
+}
+
+function logic(){
+}
+
+function repo_init(){
+    core_repo_init({
+      'info': '<input id=view type=button value=View>',
+      'info-events': {
+        'view': {
+          'todo': function(){
+              core_storage_save();
+
+              image.src = core_storage_data['uri'];
+
+              core_escape();
+          },
+        },
+      },
+      'storage': {
+        'uri': 'data:,',
+      },
+      'storage-menu': '<textarea id=uri></textarea>',
+      'title': 'URIViewer.htm',
+    });
+    canvas_init();
+}
+
+var image = new Image;
