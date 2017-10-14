@@ -34,6 +34,8 @@ function repo_init(){
           'todo': function(){
               canvas_setmode();
 
+              camera_x = 0;
+              camera_y = 0;
               image.src = core_storage_data['uri'];
 
               core_escape();
