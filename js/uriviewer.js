@@ -4,8 +4,8 @@ function draw_logic(){
     try{
         canvas_buffer.drawImage(
           image,
-          canvas_x,
-          canvas_y
+          canvas_properties['width-half'],
+          canvas_properties['height-half']
         );
     }catch(error){
     }
