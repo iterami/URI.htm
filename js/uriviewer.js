@@ -4,14 +4,26 @@ function draw_logic(){
     try{
         canvas_buffer.drawImage(
           image,
-          canvas_properties['width-half'],
-          canvas_properties['height-half']
+          canvas_properties['width-half'] + camera_x,
+          canvas_properties['height-half'] + camera_y
         );
     }catch(error){
     }
 }
 
 function logic(){
+    if(core_keys[65]['state']){
+        camera_x += core_storage_data['camera-speed'];
+    }
+    if(core_keys[68]['state']){
+        camera_x -= core_storage_data['camera-speed'];
+    }
+    if(core_keys[83]['state']){
+        camera_y -= core_storage_data['camera-speed'];
+    }
+    if(core_keys[87]['state']){
+        camera_y += core_storage_data['camera-speed'];
+    }
 }
 
 function repo_init(){
@@ -28,14 +40,23 @@ function repo_init(){
           },
         },
       },
+      'keybinds': {
+        65: {},
+        68: {},
+        83: {},
+        87: {},
+      },
       'menu': true,
       'storage': {
+        'camera-speed': 5,
         'uri': 'data:,',
       },
-      'storage-menu': '<textarea id=uri></textarea>',
+      'storage-menu': '<textarea id=uri></textarea><table><tr><td><input id=camera-speed><td>Camera Speed</table>',
       'title': 'URIViewer.htm',
     });
     canvas_init();
 }
 
+var camera_x = 0;
+var camera_y = 0;
 var image = new Image;
