@@ -28,6 +28,11 @@ function logic(){
 
 function repo_init(){
     core_repo_init({
+      'globals': {
+        'camera_x': 0,
+        'camera_y': 0,
+        'image': new Image,
+      },
       'info': '<input id=view type=button value=View>',
       'info-events': {
         'view': {
@@ -58,7 +63,3 @@ function repo_init(){
     });
     canvas_init();
 }
-
-var camera_x = 0;
-var camera_y = 0;
-var image = new Image;
