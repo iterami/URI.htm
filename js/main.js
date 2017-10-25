@@ -28,15 +28,9 @@ function logic(){
 
 function repo_init(){
     core_repo_init({
-      'globals': {
-        'camera_x': 0,
-        'camera_y': 0,
-        'image': new Image,
-      },
-      'info': '<input id=view type=button value=View>',
-      'info-events': {
+      'events': {
         'view': {
-          'todo': function(){
+          'onclick': function(){
               canvas_setmode();
 
               camera_x = 0;
@@ -47,6 +41,12 @@ function repo_init(){
           },
         },
       },
+      'globals': {
+        'camera_x': 0,
+        'camera_y': 0,
+        'image': new Image,
+      },
+      'info': '<input id=view type=button value=View>',
       'keybinds': {
         65: {},
         68: {},
