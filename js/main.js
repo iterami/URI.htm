@@ -12,16 +12,16 @@ function draw_logic(){
 }
 
 function logic(){
-    if(core_keys[65]['state']){
+    if(core_keys[core_storage_data['move-←']]['state']){
         camera_x += core_storage_data['camera-speed'];
     }
-    if(core_keys[68]['state']){
+    if(core_keys[core_storage_data['move-→']]['state']){
         camera_x -= core_storage_data['camera-speed'];
     }
-    if(core_keys[83]['state']){
+    if(core_keys[core_storage_data['move-↓']]['state']){
         camera_y -= core_storage_data['camera-speed'];
     }
-    if(core_keys[87]['state']){
+    if(core_keys[core_storage_data['move-↑']]['state']){
         camera_y += core_storage_data['camera-speed'];
     }
 }
@@ -47,12 +47,6 @@ function repo_init(){
         'image': new Image,
       },
       'info': '<input id=view type=button value=View>',
-      'keybinds': {
-        65: {},
-        68: {},
-        83: {},
-        87: {},
-      },
       'menu': true,
       'storage': {
         'camera-speed': 5,
