@@ -29,6 +29,16 @@ function logic(){
 function repo_init(){
     core_repo_init({
       'events': {
+        'image-to-uri': {
+          'onclick': function(){
+              core_file({
+                'file': document.getElementById('image-file').files[0],
+                'todo': function(event){
+                    document.getElementById('uri').value = event.target.result;
+                },
+              });
+          },
+        },
         'view': {
           'onclick': function(){
               canvas_setmode();
@@ -46,13 +56,14 @@ function repo_init(){
         'camera_y': 0,
         'image': new Image,
       },
-      'info': '<input id=view type=button value=View>',
+      'info': '<textarea id=uri></textarea><br><input id=view type=button value=View><hr>'
+        + '<input id=image-file type=file><input id=image-to-uri type=button value="Convert Image to URI">',
       'menu': true,
       'storage': {
         'camera-speed': 5,
         'uri': 'data:,',
       },
-      'storage-menu': '<textarea id=uri></textarea><table><tr><td><input id=camera-speed><td>Camera Speed</table>',
+      'storage-menu': '<table><tr><td><input id=camera-speed><td>Camera Speed</table>',
       'title': 'URIViewer.htm',
     });
     canvas_init();
