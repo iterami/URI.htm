@@ -1,5 +1,5 @@
-iterami/URIViewer.htm
----------------------
+iterami/URI.htm
+---------------
 
 * Contributing: https://github.com/iterami/Documentation.htm/blob/gh-pages/CONTRIBUTING.md
 * Requires:
