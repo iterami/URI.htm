@@ -39,6 +39,11 @@ function repo_init(){
               });
           },
         },
+        'open': {
+          'onclick': function(){
+              window.open(document.getElementById('uri').value);
+          },
+        },
         'view': {
           'onclick': function(){
               canvas_setmode();
@@ -56,7 +61,7 @@ function repo_init(){
         'camera_y': 0,
         'image': new Image,
       },
-      'info': '<textarea id=uri></textarea><br><input id=view type=button value=View><hr>'
+      'info': '<textarea id=uri></textarea><br><input id=view type=button value=View><input id=open type=button value="Open URI in New Tab"><hr>'
         + '<input id=file type=file><input id=file-to-uri type=button value="Convert File to URI">',
       'menu': true,
       'storage': {
