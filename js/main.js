@@ -19,11 +19,6 @@ function repo_init(){
           },
         },
       },
-      'globals': {
-        'camera_x': 0,
-        'camera_y': 0,
-        'image': new Image,
-      },
       'info': '<textarea id=uri></textarea><br><input id=open type=button value="Open URI in New Tab"><hr>'
         + '<input id=file type=file><input id=file-to-uri type=button value="Convert File to URI">',
       'menu': true,
