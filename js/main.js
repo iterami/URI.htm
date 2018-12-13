@@ -5,8 +5,13 @@ function repo_init(){
       'events': {
         'file-to-uri': {
           'onclick': function(){
+              let files = document.getElementById('file').files;
+              if(files.length === 0){
+                  return;
+              }
+
               core_file({
-                'file': document.getElementById('file').files[0],
+                'file': files[0],
                 'todo': function(event){
                     document.getElementById('uri').value = event.target.result;
                 },
