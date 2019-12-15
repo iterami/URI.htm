@@ -32,7 +32,7 @@ function repo_init(){
                 'hash': uri['hash'],
                 'host': uri['host'],
                 'origin': uri['origin'],
-                'pathname': '<textarea>' + uri['pathname'] + '</textarea>',
+                'pathname': '<textarea readonly>' + uri['pathname'] + '</textarea>',
                 'port': uri['port'],
                 'protocol': uri['protocol'],
                 'search': uri['search'],
