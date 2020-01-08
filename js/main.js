@@ -47,7 +47,7 @@ function repo_init(){
         },
         'parse-clear': {
           'onclick': function(){
-              document.getElementById('parsed').innerHTML = '';
+              document.getElementById('parsed').textContent = '';
           },
         },
       },
