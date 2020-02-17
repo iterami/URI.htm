@@ -5,7 +5,7 @@ function repo_init(){
       'events': {
         'file-to-uri': {
           'onclick': function(){
-              let files = document.getElementById('file').files;
+              const files = document.getElementById('file').files;
               if(files.length === 0){
                   return;
               }
@@ -26,9 +26,9 @@ function repo_init(){
         'parse': {
           'onclick': function(){
               let result = '';
-              let uri = new URL(document.getElementById('uri').value);
+              const uri = new URL(document.getElementById('uri').value);
 
-              let components = {
+              const components = {
                 'hash': uri['hash'],
                 'host': uri['host'],
                 'origin': uri['origin'],
@@ -38,7 +38,7 @@ function repo_init(){
                 'search': uri['search'],
               };
 
-              for(let component in components){
+              for(const component in components){
                   result += '<tr><td>' + component + '<td>' + components[component];
               }
 
