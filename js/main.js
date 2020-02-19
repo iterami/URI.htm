@@ -20,7 +20,7 @@ function repo_init(){
         },
         'open': {
           'onclick': function(){
-              window.open(document.getElementById('uri').value);
+              globalThis.open(document.getElementById('uri').value);
           },
         },
         'parse': {
@@ -52,7 +52,7 @@ function repo_init(){
         },
       },
       'info': '<textarea id=uri></textarea><br>'
-        + '<input id=open type=button value="Open URI in New Tab">'
+        + '<input id=open type=button value="Open URI">'
         + '<input id=parse type=button value="Parse URI"><input id=parse-clear type=button value="Clear Parse">'
         + '<table id=parsed></table><hr>'
         + '<input id=file type=file><input id=file-to-uri type=button value="Convert File to URI">',
