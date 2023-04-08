@@ -20,7 +20,11 @@ function repo_init(){
         },
         'open': {
           'onclick': function(){
-              globalThis.open(document.getElementById('uri').value);
+              globalThis.open(
+                document.getElementById('uri').value,
+                '_blank',
+                'noreferrer'
+              );
           },
         },
         'parse': {
