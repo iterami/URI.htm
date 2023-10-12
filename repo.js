@@ -61,6 +61,7 @@ function repo_init(){
         + '<table id=parsed></table><hr>'
         + '<input id=file type=file><input id=file-to-uri type=button value="Convert File to URI">',
       'menu': true,
+      'menu-lock': true,
       'storage': {
         'uri': 'data:,',
       },
