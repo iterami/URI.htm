@@ -56,10 +56,10 @@ function repo_init(){
         },
       },
       'info': '<textarea id=uri></textarea><br>'
-        + '<input id=open type=button value="Open URI">'
-        + '<input id=parse type=button value="Parse URI"><input id=parse-clear type=button value="Clear Parse">'
+        + '<button id=open type=button>Open URI</button>'
+        + '<button id=parse type=button>Parse URI</button><button id=parse-clear type=button>Clear Parse</button>'
         + '<table id=parsed></table><hr>'
-        + '<input id=file type=file><input id=file-to-uri type=button value="Convert File to URI">',
+        + '<input id=file type=file><button id=file-to-uri type=button>Convert File to URI</button>',
       'menu': true,
       'menu-lock': true,
       'storage': {
