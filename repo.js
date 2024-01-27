@@ -60,7 +60,6 @@ function repo_init(){
         + '<button id=parse type=button>Parse URI</button><button id=parse-clear type=button>Clear Parse</button>'
         + '<table id=parsed></table><hr>'
         + '<input id=file type=file><button id=file-to-uri type=button>Convert File to URI</button>',
-      'menu': true,
       'menu-lock': true,
       'storage': {
         'uri': 'data:,',
