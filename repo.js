@@ -5,7 +5,7 @@ function repo_init(){
       'events': {
         'file-to-uri': {
           'onclick': function(){
-              const files = document.getElementById('file').files;
+              const files = core_elements['file'].files;
               if(files.length === 0){
                   return;
               }
@@ -13,7 +13,7 @@ function repo_init(){
               core_file({
                 'file': files[0],
                 'todo': function(event){
-                    document.getElementById('uri').value = event.target.result;
+                    core_elements['uri'].value = event.target.result;
                 },
               });
           },
@@ -21,7 +21,7 @@ function repo_init(){
         'open': {
           'onclick': function(){
               globalThis.open(
-                document.getElementById('uri').value,
+                core_elements['uri'],
                 '_blank',
                 'noreferrer'
               );
@@ -29,8 +29,13 @@ function repo_init(){
         },
         'parse': {
           'onclick': function(){
+              if(core_elements['parsed'].textContent.length > 0){
+                  core_elements['parsed'].textContent = '';
+                  return;
+              }
+
               let result = '';
-              const uri = new URL(document.getElementById('uri').value);
+              const uri = new URL(core_elements['uri'].value);
 
               const components = {
                 'hash': uri['hash'],
@@ -46,18 +51,13 @@ function repo_init(){
                   result += '<tr><td>' + component + '<td>' + components[component];
               }
 
-              document.getElementById('parsed').innerHTML = result;
-          },
-        },
-        'parse-clear': {
-          'onclick': function(){
-              document.getElementById('parsed').textContent = '';
+              core_elements['parsed'].innerHTML = result;
           },
         },
       },
       'info': '<textarea id=uri></textarea><br>'
         + '<button id=open type=button>Open URI</button>'
-        + '<button id=parse type=button>Parse URI</button><button id=parse-clear type=button>Clear Parse</button>'
+        + '<button id=parse type=button>Toggle Parse</button>'
         + '<table id=parsed></table><hr>'
         + '<input id=file type=file><button id=file-to-uri type=button>Convert File to URI</button>',
       'menu-lock': true,
@@ -65,5 +65,10 @@ function repo_init(){
         'uri': 'data:,',
       },
       'title': 'URI.htm',
+      'ui-elements': [
+        'file',
+        'parsed',
+        'uri',
+      ],
     });
 }
