@@ -21,7 +21,7 @@ function repo_init(){
         'open': {
           'onclick': function(){
               globalThis.open(
-                core_elements['uri'],
+                core_elements['uri'].value,
                 '_blank',
                 'noreferrer'
               );
