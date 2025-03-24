@@ -58,7 +58,7 @@ function repo_init(){
       'info': '<textarea id=uri></textarea><br>'
         + '<button id=open type=button>Open URI</button>'
         + '<button id=parse type=button>Toggle Parse</button>'
-        + '<table id=parsed></table><hr>'
+        + '<table id=parsed></table>'
         + '<input id=file type=file><button id=file-to-uri type=button>Convert File to URI</button>',
       'menu-lock': true,
       'storage': {
