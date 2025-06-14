@@ -5,7 +5,7 @@ function repo_init(){
       'events': {
         'file-to-uri': {
           'onclick': function(){
-              const files = core_elements['file'].files;
+              const files = core_elements.file.files;
               if(files.length === 0){
                   return;
               }
@@ -13,7 +13,7 @@ function repo_init(){
               core_file({
                 'file': files[0],
                 'todo': function(event){
-                    core_elements['uri'].value = event.target.result;
+                    core_elements.uri.value = event.target.result;
                 },
               });
           },
@@ -21,7 +21,7 @@ function repo_init(){
         'open': {
           'onclick': function(){
               globalThis.open(
-                core_elements['uri'].value,
+                core_elements.uri.value,
                 '_blank',
                 'noreferrer'
               );
@@ -29,29 +29,29 @@ function repo_init(){
         },
         'parse': {
           'onclick': function(){
-              if(core_elements['parsed'].textContent.length > 0){
-                  core_elements['parsed'].textContent = '';
+              if(core_elements.parsed.textContent.length > 0){
+                  core_elements.parsed.textContent = '';
                   return;
               }
 
               let result = '';
-              const uri = new URL(core_elements['uri'].value);
+              const uri = new URL(core_elements.uri.value);
 
               const components = {
-                'hash': uri['hash'],
-                'host': uri['host'],
-                'origin': uri['origin'],
-                'pathname': '<textarea readonly>' + uri['pathname'] + '</textarea>',
-                'port': uri['port'],
-                'protocol': uri['protocol'],
-                'search': uri['search'],
+                'hash': uri.hash,
+                'host': uri.host,
+                'origin': uri.origin,
+                'pathname': '<textarea readonly>' + uri.pathname + '</textarea>',
+                'port': uri.port,
+                'protocol': uri.protocol,
+                'search': uri.search,
               };
 
               for(const component in components){
                   result += '<tr><td>' + component + '<td>' + components[component];
               }
 
-              core_elements['parsed'].innerHTML = result;
+              core_elements.parsed.innerHTML = result;
           },
         },
       },
