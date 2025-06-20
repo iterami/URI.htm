@@ -65,7 +65,7 @@ function repo_init(){
         'uri': 'data:,',
       },
       'title': 'URI.htm',
-      'ui-elements': [
+      'ui_elements': [
         'file',
         'parsed',
         'uri',
